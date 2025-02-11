@@ -15,4 +15,6 @@ npm create vite@latest .(project name or you can use dot) -- --template react
     we can use 
     export default App_name
     otherwise we can include it in the function beginning as export default function App_name.
-    
+    class=className
+    for=forName
+    htmlfor
