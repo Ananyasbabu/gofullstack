@@ -1,0 +1,18 @@
+try 
+npm
+npm create vite@latest .(project name or you can use dot) -- --template react
+  npm install
+  npm run dev
+
+  in the app.jsx
+    delete everything and 
+    function App_name(){
+      return(
+        <> 
+        </>
+      );
+    }
+    we can use 
+    export default App_name
+    otherwise we can include it in the function beginning as export default function App_name.
+    
