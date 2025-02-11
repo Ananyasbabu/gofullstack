@@ -18,3 +18,5 @@ npm create vite@latest .(project name or you can use dot) -- --template react
     class=className
     for=forName
     htmlfor
+
+    npm install react-router-dom

@@ -1,17 +1,20 @@
 import CarCreate from "./car/CarCreate";
 import CarList from "./car/CarList";
 import CarView from "./car/CarView";
-import Great from "./header/Great";
+// import Great from "./header/Great";
+import {BrowserRouter,Routes,Route} from "react-router-dom";
 
 function App(){
   return(
     <>
-    <h1><marquee >Car Parking Management</marquee></h1>
-    <Great/>
-    <CarCreate/>
-    <CarList/>
-    <CarView/>
-
+      <BrowserRouter>
+      <Routes>
+        <Route path="" element={<CarList/>}/>
+        <Route path="/car/list" element={<CarList/>}/>
+        <Route path="/car/create" element={<CarCreate/>}/>
+        <Route path="/car/view" element={<CarView/>}/>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

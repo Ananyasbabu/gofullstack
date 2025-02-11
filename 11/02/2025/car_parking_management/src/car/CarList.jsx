@@ -1,6 +1,9 @@
+import Great from "../header/Great";
+
 function CarList(){
     return(
         <>
+        <Great/>
         <h3>Car List</h3>
     <div className="container">
         <table className="table table-success table-striped">
