@@ -8,5 +8,41 @@ import (
 )->Multi import 
 
 main(){
-    
+
 }
+
+in order to start with our server
+
+go mod init PMSnoMongo(porject name)
+    =>it creates the go.mod file which will handle the dependencies
+
+to install any external libraries we use go install command 
+
+to install gin-gonic frame work
+package main
+
+import (
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	r:=gin.Default()
+	r.run()
+	
+}
+        go install github.com/gin-gonic/gin@latest
+        go get github.com/gin-gonic/gin@latest
+
+        go run main.go
+        go get link will come install it
+        go run main.go
+
+
+        in postman
+            new tab
+                type the link http://localhost:8080/cars/
+                choose to post
+                under body
+                    choose raw and JSON
+                        type the requirements inside curly braces
+        send
