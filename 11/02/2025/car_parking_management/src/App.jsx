@@ -10,10 +10,10 @@ function App(){
       <BrowserRouter>
       <Routes>
         <Route path="" element={<CarList/>}/>
-        <Route path="/car/list" element={<CarList/>}/>
-        <Route path="/car/create" element={<CarCreate/>}/>
-        <Route path="/car/view" element={<CarView/>}/>
-        </Routes>
+        <Route path="/list" element={<CarList/>}/>
+        <Route path="/create" element={<CarCreate/>}/>
+        <Route path="/view" element={<CarView/>}/>
+      </Routes>
       </BrowserRouter>
     </>
   );

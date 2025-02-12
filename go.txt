@@ -1,0 +1,12 @@
+go run file.go
+
+Packagee package_name(main)
+
+import "fmt" ;->single import
+import (
+    "fmt"
+)->Multi import 
+
+main(){
+    
+}
