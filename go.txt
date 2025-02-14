@@ -1,3 +1,5 @@
+go mod init project name
+
 go run file.go
 
 Packagee package_name(main)
