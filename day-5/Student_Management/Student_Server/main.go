@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"time"
 
-	// "github.com/gin-contrib/cors"
+	"github.com/gin-contrib/cors" // Uncomment this
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -23,15 +23,13 @@ var mongoCollectionStudent string = "students"
 var mongoclient *mongo.Client
 var studentCollection *mongo.Collection
 
-// Model Student for Collection "students"
-// Model Student for Collection "students"
+// Model Student
 type Student struct {
 	USN     string `bson:"usn" json:"usn"`
 	Name    string `bson:"name" json:"name"`
 	Section string `bson:"section" json:"section"`
 	Type    string `bson:"type" json:"type"`
 }
-
 
 // Connect to MongoDB
 func connectDB() {
@@ -158,10 +156,22 @@ func deleteStudent(c *gin.Context) {
 func main() {
 	connectDB()
 	r := gin.Default()
+
+	// Enable CORS
+	r.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"http://localhost:5173"}, // React frontend URL
+		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: true,
+		MaxAge:           12 * time.Hour,
+	}))
+
 	r.POST("/students", createStudent)
 	r.GET("/students", readAllStudents)
 	r.GET("/students/:usn", readStudentByUSN)
 	r.PUT("/students/:usn", updateStudent)
 	r.DELETE("/students/:usn", deleteStudent)
+
 	r.Run(":8080")
 }
